@@ -1,21 +1,14 @@
 import { NavigationActions } from 'react-navigation'
 import { AppNavigator } from '../navigators/AppNavigator'
 
-const firstAction = AppNavigator.router.getActionForPathAndParams('Login')
+const firstAction = AppNavigator.router.getActionForPathAndParams('Main')
 const INITIAL_NAV_STATE = AppNavigator.router.getStateForAction(firstAction)
 
-const { NAVIGATE, BACK } = NavigationActions
-
-export default (state = INITIAL_NAV_STATE, action) => {
+export default (state = null, action) => {
   switch (action.type) {
-    case 'Login':
+    case 'Main':
       return AppNavigator.router.getStateForAction(
-        NavigationActions.back(),
-        state
-      )
-    case 'Home':
-      return AppNavigator.router.getStateForAction(
-        NavigationActions.navigate({ routeName: 'Home' }),
+        NavigationActions.navigate({ routeName: 'Main' }),
         state
       )
     default:
