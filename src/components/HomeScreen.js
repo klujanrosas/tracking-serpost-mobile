@@ -1,6 +1,7 @@
 import _ from 'lodash'
 import store from 'react-native-simple-store'
 import React, { Component }  from 'react'
+import codePush from 'react-native-code-push'
 import {
   View,
   KeyboardAvoidingView, 
@@ -28,6 +29,7 @@ class HomeScreen extends Component {
   }
 
   componentDidMount() {
+    codePush.sync()
     this.props.loadPackages()
     this.props.fetchCaptcha()
     setTimeout(() => {
