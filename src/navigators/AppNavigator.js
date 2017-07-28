@@ -25,7 +25,7 @@ const MainScreenNavigator = TabNavigator({
   History: {
     screen: HistoryScreen,
     navigationOptions: ({ navigation }) => ({
-      tabBarLabel: 'Historial',
+      tabBarLabel: 'Guardados',
       tabBarIcon: ({ focused, tintColor }) => (
         <Ionicons
           name={ focused ? "ios-albums" : "ios-albums-outline" }
