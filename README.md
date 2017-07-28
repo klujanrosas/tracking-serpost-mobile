@@ -1,0 +1,1 @@
+[![Build status](https://build.mobile.azure.com/v0.1/apps/7febb372-9c9f-4eba-979d-f3f1e205f240/branches/master/badge)](https://mobile.azure.com)
