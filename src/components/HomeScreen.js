@@ -1,7 +1,6 @@
 import _ from 'lodash'
 import store from 'react-native-simple-store'
 import React, { Component }  from 'react'
-import codePush from 'react-native-code-push'
 import {
   View,
   KeyboardAvoidingView, 
@@ -28,8 +27,7 @@ class HomeScreen extends Component {
     saveModalVisible: false,
   }
 
-  componentDidMount() {
-    codePush.sync()
+  componentDidMount() {    
     this.props.loadPackages()
     this.props.fetchCaptcha()
     setTimeout(() => {
@@ -157,6 +155,7 @@ class HomeScreen extends Component {
           visible={this.state.modalVisible}
           onAccept={this._onAccept.bind(this)}
           onDecline={this._onCancel.bind(this)}
+          onRequestClose={this._onCancel.bind(this)}
           acceptText="Guardar búsqueda"
           declineText="Ya vi lo que buscaba"
           animationType="fade"
@@ -166,7 +165,8 @@ class HomeScreen extends Component {
         <Confirm
           visible={this.state.saveModalVisible}
           onAccept={this._onSavePackage.bind(this)}
-          onDecline={this._onDeclinePackage.bind(this)}
+          onDecline={this._onDeclinePackage.bind(this)}    
+          onRequestClose={this._onDeclinePackage.bind(this)}      
           acceptText="Guardar"
           declineText="Cancelar"
           animationType="slide"

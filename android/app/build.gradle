@@ -143,6 +143,9 @@ android {
 }
 
 dependencies {
+    compile project(':mobile-center-crashes')
+    compile project(':mobile-center-analytics')
+    compile project(':mobile-center')
     compile project(':react-native-code-push')
     compile project(':react-native-vector-icons')
     compile project(':react-native-splash-screen')

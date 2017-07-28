@@ -13,8 +13,18 @@ import reducers from './src/reducers'
 import AppWithNavigationState from './src/navigators/AppNavigator'
 
 const createStoreWithMiddleware = applyMiddleware(ReduxPromise, ReduxThunk)(createStore)
+const updateDialogOptions = {
+  title: "Actualizar aplicación!",
+  optionalUpdateMessage: "Hay una actualización disponible. ¿Deseas instalarla?",
+  optionalIgnoreButtonLabel: "No, gracias.",
+  optionalInstallButtonLabel: "Sí!",
+}
+const codePushOptions = { checkFrequency: codePush.CheckFrequency.ON_APP_RESUME, updateDialog: updateDialogOptions, installMode: codePush.InstallMode.IMMEDIATE }
 
 class SerpostTracking extends Component {
+  componentDidMount() {
+    // codePush.sync()
+  }
   render() {
     return (
       <Provider store={createStoreWithMiddleware(reducers)}>
@@ -24,6 +34,6 @@ class SerpostTracking extends Component {
   }
 }
 
-SerpostTracking = codePush(SerpostTracking)
+SerpostTracking = codePush(codePushOptions)(SerpostTracking)
 
 AppRegistry.registerComponent('SerpostTracking', () => SerpostTracking);

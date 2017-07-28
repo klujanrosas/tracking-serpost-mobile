@@ -1,4 +1,6 @@
 <resources>
-    <string moduleConfig="true" name="reactNativeCodePush_androidDeploymentKey">GVLfONcAoy6wyYp9M6MjdnrbUlVof24bacf2-5c9c-467b-9c2f-d654b2e9b58a</string>
+    <string moduleConfig="true" name="mobileCenterCrashes_whenToSendCrashes">ALWAYS_SEND</string>
+    <string moduleConfig="true" name="mobileCenterAnalytics_whenToEnableAnalytics">ALWAYS_SEND</string>
+    <string moduleConfig="true" name="reactNativeCodePush_androidDeploymentKey">YUGbEda7ScqMpUg94ICrLTBn6O3Vf24bacf2-5c9c-467b-9c2f-d654b2e9b58a</string>
     <string name="app_name">SerpostTracking</string>
 </resources>

@@ -2,7 +2,7 @@ import React from 'react'
 import { Text, View, ScrollView, Modal, TouchableOpacity } from 'react-native'
 import Card from './Card'
 
-const Confirm = ({ children, visible, onAccept, onDecline, acceptText, declineText, animationType }) => {
+const Confirm = ({ children, visible, onAccept, onDecline, onRequestClose, acceptText, declineText, animationType }) => {
   const { containerStyle, textStyle, cardSectionStyle } = styles
 
   return (
@@ -11,7 +11,7 @@ const Confirm = ({ children, visible, onAccept, onDecline, acceptText, declineTe
         visible={visible}
         animationType={animationType}
         transparent
-        onRequestClose={() => {}}
+        onRequestClose={onRequestClose}
       >
         <ScrollView contentContainerStyle={containerStyle}>
           <Card style={cardSectionStyle}>
