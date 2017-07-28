@@ -14,7 +14,14 @@ export default (state = [], action) => {
       }
       return state
     case ADD_PACKAGE:
-      return [ ...state, action.payload ]
+      let foundItem = false
+      state.forEach(pack => {
+        foundItem = pack.packageTrackingNumber === action.payload.packageTrackingNumber
+      })
+      if (!foundItem) {
+        return [ ...state, action.payload ]
+      }
+      return state
     default:
       return state
   }

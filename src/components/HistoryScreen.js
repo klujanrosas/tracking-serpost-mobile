@@ -4,10 +4,14 @@ import React, { Component }  from 'react'
 import { View, ScrollView, Text, Button } from 'react-native'
 import { connect } from 'react-redux'
 import { HistoryItem } from '../components/common'
-import { addPackage, trackingTextChange } from '../actions'
+import { addPackage, trackingTextChange, loadPackages } from '../actions'
 
 
 class HistoryScreen extends Component {
+
+  componentDidMount() {
+    this.props.loadPackages()
+  }
 
   _onLoadItem(pack) {
     console.log(pack)
@@ -41,4 +45,4 @@ const mapStateToProps = state => {
   }
 }
 
-export default connect(mapStateToProps, { addPackage, trackingTextChange })(HistoryScreen)
+export default connect(mapStateToProps, { addPackage, trackingTextChange, loadPackages })(HistoryScreen)

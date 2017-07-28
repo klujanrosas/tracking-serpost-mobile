@@ -1,3 +1,4 @@
 <resources>
+    <string moduleConfig="true" name="reactNativeCodePush_androidDeploymentKey">GVLfONcAoy6wyYp9M6MjdnrbUlVof24bacf2-5c9c-467b-9c2f-d654b2e9b58a</string>
     <string name="app_name">SerpostTracking</string>
 </resources>

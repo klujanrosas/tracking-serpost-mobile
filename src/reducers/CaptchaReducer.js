@@ -5,7 +5,7 @@ import {
 export default (state = null, action) => {
   switch (action.type) {
     case FETCH_CAPTCHA:
-      return action.payload.data.image
+      return action.payload.data.payload.image
     default:
       return state
   }

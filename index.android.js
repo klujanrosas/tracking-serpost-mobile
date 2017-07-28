@@ -8,12 +8,13 @@ import {
   Text,
   View
 } from 'react-native'
+import codePush from 'react-native-code-push'
 import reducers from './src/reducers'
 import AppWithNavigationState from './src/navigators/AppNavigator'
 
 const createStoreWithMiddleware = applyMiddleware(ReduxPromise, ReduxThunk)(createStore)
 
-export default class SerpostTracking extends Component {
+class SerpostTracking extends Component {
   render() {
     return (
       <Provider store={createStoreWithMiddleware(reducers)}>
@@ -22,5 +23,7 @@ export default class SerpostTracking extends Component {
     )
   }
 }
+
+SerpostTracking = codePush(SerpostTracking)
 
 AppRegistry.registerComponent('SerpostTracking', () => SerpostTracking);

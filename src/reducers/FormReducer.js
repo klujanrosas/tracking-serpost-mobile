@@ -23,7 +23,7 @@ export default (state = INITIAL_STATE, action) => {
     case TRACKING_TEXT_CHANGE:
       return { ...state, trackingInfo: null, trackingText: action.payload }
     case TRACK_PACKAGE:
-      return { ...INITIAL_STATE, trackingInfo: action.payload.data }
+      return { ...INITIAL_STATE, trackingInfo: action.payload.data.payload }
     case SAVE_PACKAGE:
       return INITIAL_STATE
     default:

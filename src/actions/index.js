@@ -10,7 +10,8 @@ import {
   LOAD_PACKAGES
 } from './types'
 
-const ROOT_URL = 'http://192.168.1.97:2000'
+const ROOT_URL = 'http://api.pupperapp.net/serpost'
+// const ROOT_URL = 'http://192.168.1.97:8000/serpost'
 
 export const loadPackages = () => {
   const request = store.get('serpostTrackingSavedPackages')
@@ -22,6 +23,7 @@ export const loadPackages = () => {
 }
 
 export const addPackage = ({ packageName, packageTrackingNumber }) => {
+  store.push('serpostTrackingSavedPackages', { packageName, packageTrackingNumber })
   console.log('accion', { packageName, packageTrackingNumber })
 
   return {
